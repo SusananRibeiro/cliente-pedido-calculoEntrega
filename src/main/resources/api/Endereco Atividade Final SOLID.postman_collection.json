@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "5a81542a-6cdc-4d6d-9287-3ef6c356a143",
+		"name": "Endereco Atividade Final SOLID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27532932",
+		"_collection_link": "https://warped-firefly-748319.postman.co/workspace/Team-Workspace~62cf569d-daee-4ae8-87d9-2d1be527e9f2/collection/27532932-5a81542a-6cdc-4d6d-9287-3ef6c356a143?action=share&source=collection_link&creator=27532932"
+	},
+	"item": [
+		{
+			"name": "Endereco GET Solid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enderecos/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endereco POST Solid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"Rua 8\",\r\n    \"bairro\": \"Bairro 8\",\r\n    \"cidade\": \"Cidade 8\",\r\n    \"estado\": \"Estado 8\",\r\n    \"clienteId\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endereco PUT Solid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"Nome 8\",\r\n    \"bairro\": \"Bairro 8\",\r\n    \"cidade\": \"Cidade 8\",\r\n    \"estado\": \"Estado 8\",\r\n    \"clienteId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/atualizar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"atualizar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endereco DELETE Solid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enderecos/deletar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"deletar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

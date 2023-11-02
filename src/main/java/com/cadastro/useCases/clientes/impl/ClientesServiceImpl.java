@@ -5,6 +5,7 @@ import com.cadastro.useCases.clientes.domanis.ClientesRequestDom;
 import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -15,6 +16,7 @@ public class ClientesServiceImpl implements ClientesService {
 
     @Override
     public List<ClientesResponseDom> carregarClientes() {
+
         return clientesBusiness.carregarClientes();
     }
 
@@ -30,11 +32,13 @@ public class ClientesServiceImpl implements ClientesService {
 
     @Override
     public void deletarCliente(Long id) {
+
         clientesBusiness.deletarCliente(id);
     }
 
     @Override
     public ClientesResponseDom carregarClienteById(Long id) {
+
         return clientesBusiness.carregarClienteById(id);
     }
 }

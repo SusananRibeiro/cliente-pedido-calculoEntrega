@@ -1,6 +1,6 @@
 package com.cadastro.useCases.enderecos.impl.mappers;
-import com.cadastro.entitys.Clientes;
-import com.cadastro.entitys.Enderecos;
+import com.cadastro.entities.Clientes;
+import com.cadastro.entities.Enderecos;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;
 
@@ -12,7 +12,7 @@ public class EnderecosMapper {
         out.setCidade(endereco.getCidade());
         out.setRua(endereco.getRua());
         out.setEstado(endereco.getEstado());
-        out.setClienteId(endereco.getClienteId().getId());
+        out.setClienteId(endereco.getCliente().getId());
 
         return out;
     }
@@ -23,7 +23,7 @@ public class EnderecosMapper {
         out.setRua(enderecos.getRua());
         out.setCidade(enderecos.getCidade());
         out.setEstado(enderecos.getEstado());
-        out.setClienteId(cliente);
+        out.setCliente(cliente);
 
         return out;
     }

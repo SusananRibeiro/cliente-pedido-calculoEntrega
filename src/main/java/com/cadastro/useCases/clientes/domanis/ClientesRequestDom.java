@@ -1,4 +1,5 @@
 package com.cadastro.useCases.clientes.domanis;
+
 import java.time.LocalDate;
 
 public class ClientesRequestDom {

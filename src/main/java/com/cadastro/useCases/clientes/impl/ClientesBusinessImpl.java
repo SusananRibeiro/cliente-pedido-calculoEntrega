@@ -1,6 +1,6 @@
 package com.cadastro.useCases.clientes.impl;
-import com.cadastro.entitys.Clientes;
-import com.cadastro.entitys.Enderecos;
+import com.cadastro.entities.Clientes;
+import com.cadastro.entities.Enderecos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.frameWork.utils.StringUtil;
@@ -11,6 +11,7 @@ import com.cadastro.useCases.clientes.impl.mappers.ClientesMapper;
 import com.cadastro.useCases.clientes.impl.repositorys.ClientesEnderecosRespository;
 import com.cadastro.useCases.clientes.impl.repositorys.ClientesRespository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
