@@ -2,7 +2,6 @@ package com.cadastro.useCases.enderecos;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;
-
 import java.util.List;
 
 public interface EnderecosService {

@@ -1,10 +1,8 @@
 package com.cadastro.useCases.clientes;
-
-import com.cadastro.entitys.Clientes;
+import com.cadastro.entities.Clientes;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.clientes.domanis.ClientesRequestDom;
 import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
-
 import java.util.List;
 
 public interface ClientesBusiness {

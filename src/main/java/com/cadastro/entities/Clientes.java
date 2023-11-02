@@ -1,12 +1,12 @@
-package com.cadastro.entitys;
+package com.cadastro.entities;
 import jakarta.persistence.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity(name = "cliente")
-@SQLDelete(sql = "UPDATE cliente SET deleted_at = now() WHERE id=?")
+@Entity(name = "clientes")
+@SQLDelete(sql = "UPDATE clientes SET deleted_at = now() WHERE id=?")
 @Where(clause = "deleted_at is null")
 public class Clientes {
 

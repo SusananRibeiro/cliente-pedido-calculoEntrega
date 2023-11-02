@@ -1,5 +1,5 @@
 package com.cadastro.useCases.clientes.impl.repositorys;
-import com.cadastro.entitys.Clientes;
+import com.cadastro.entities.Clientes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

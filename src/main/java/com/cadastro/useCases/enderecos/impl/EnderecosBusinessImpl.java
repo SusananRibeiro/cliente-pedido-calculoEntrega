@@ -1,6 +1,6 @@
 package com.cadastro.useCases.enderecos.impl;
-import com.cadastro.entitys.Clientes;
-import com.cadastro.entitys.Enderecos;
+import com.cadastro.entities.Clientes;
+import com.cadastro.entities.Enderecos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.enderecos.EnderecosBusiness;
@@ -71,7 +71,7 @@ public class EnderecosBusinessImpl implements EnderecosBusiness {
             record.setBairro(endereco.getBairro());
             record.setCidade(endereco.getCidade());
             record.setEstado(endereco.getEstado());
-            record.setClienteId(cliente.get());
+            record.setCliente(cliente.get());
             return enderecosRepository.save(record);
         });
 

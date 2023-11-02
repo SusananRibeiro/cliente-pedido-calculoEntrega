@@ -1,4 +1,4 @@
-package com.cadastro.entitys;
+package com.cadastro.entities;
 import jakarta.persistence.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -29,7 +29,7 @@ public class Enderecos {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
-    private Clientes clienteId;
+    private Clientes cliente;
 
     public Long getId() {
         return id;
@@ -79,11 +79,11 @@ public class Enderecos {
         this.deleted_at = deleted_at;
     }
 
-    public Clientes getClienteId() {
-        return clienteId;
+    public Clientes getCliente() {
+        return cliente;
     }
 
-    public void setClienteId(Clientes clienteId) {
-        this.clienteId = clienteId;
+    public void setCliente(Clientes cliente) {
+        this.cliente = cliente;
     }
 }

@@ -1,6 +1,6 @@
 package com.cadastro.useCases.clientes.impl.mappers;
-import com.cadastro.entitys.Clientes;
-import com.cadastro.entitys.Enderecos;
+import com.cadastro.entities.Clientes;
+import com.cadastro.entities.Enderecos;
 import com.cadastro.useCases.clientes.domanis.ClientesEnderecosResponseDom;
 import com.cadastro.useCases.clientes.domanis.ClientesRequestDom;
 import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
