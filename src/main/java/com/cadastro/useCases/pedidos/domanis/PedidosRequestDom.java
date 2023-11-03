@@ -1,10 +1,11 @@
 package com.cadastro.useCases.pedidos.domanis;
 import com.cadastro.entities.Clientes;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class PedidosRequestDom {
 
-    private LocalDate dataCriacao;
+    private LocalDateTime dataCriacao;
 
     private LocalDate dataEntrega;
 
@@ -14,11 +15,11 @@ public class PedidosRequestDom {
 
     private Long enderecoId;
 
-    public LocalDate getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDate dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
