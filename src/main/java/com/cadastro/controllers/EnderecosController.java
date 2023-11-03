@@ -2,6 +2,7 @@ package com.cadastro.controllers;
 import com.cadastro.frameWork.annotions.LogRest;
 import com.cadastro.frameWork.utils.ResponseUtil;
 import com.cadastro.frameWork.utils.SenacException;
+import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;
 import com.cadastro.useCases.enderecos.impl.EnderecosServiceImpl;
@@ -25,6 +26,12 @@ public class EnderecosController {
         List<EnderecosResponseDom> out = enderecosService.carregarEnderecos();
 
         return ResponseEntity.ok(out);
+    }
+
+    @GetMapping("/carregar/{id}")
+    @LogRest
+    public ResponseEntity<EnderecosResponseDom> carregarEnderecoById(@PathVariable Long id){
+        return ResponseEntity.ok(enderecosService.carregarEnderecoById(id));
     }
 
     @PostMapping("/criar")

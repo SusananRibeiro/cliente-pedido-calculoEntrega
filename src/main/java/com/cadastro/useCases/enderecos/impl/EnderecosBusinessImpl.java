@@ -3,6 +3,8 @@ import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Enderecos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
+import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
+import com.cadastro.useCases.clientes.impl.mappers.ClientesMapper;
 import com.cadastro.useCases.enderecos.EnderecosBusiness;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;
@@ -48,7 +50,8 @@ public class EnderecosBusinessImpl implements EnderecosBusiness {
             throw new SenacException("Cliente não encontrado");
         }
 
-        Enderecos enderecoRetorno = enderecosRepository.save(EnderecosMapper.enderecosResquestDomToEnderecos(endereco, cliente.get()));
+        Enderecos enderecoRetorno = enderecosRepository.save(EnderecosMapper
+                .enderecosResquestDomToEnderecos(endereco, cliente.get()));
 
         return EnderecosMapper.enderecosToEnderecosResponseDom(enderecoRetorno);
     }
@@ -87,6 +90,13 @@ public class EnderecosBusinessImpl implements EnderecosBusiness {
     @Override
     public void deletarEndereco(Long id) {
         enderecosRepository.deleteById(id);
+    }
+
+    @Override
+    public EnderecosResponseDom carregarEnderecoById(Long id) {
+        Enderecos endereco = enderecosRepository.findById(id).get();
+        EnderecosResponseDom out = EnderecosMapper.enderecosToEnderecosResponseDom(endereco);
+        return out;
     }
 
     private List<String> validacaoManutencaoEndereco(EnderecosRequestDom endereco){

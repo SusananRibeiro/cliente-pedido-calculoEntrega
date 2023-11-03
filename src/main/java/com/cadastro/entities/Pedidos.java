@@ -15,7 +15,7 @@ public class Pedidos {
     private Long id; //Id
 
     @Column
-    private LocalDate dataCriacao; // dataCriacao
+    private LocalDateTime dataCriacao; // dataCriacao
 
     @Column(nullable = false)
     private LocalDate dataEntrega; // dataEntrega
@@ -42,11 +42,11 @@ public class Pedidos {
         this.id = id;
     }
 
-    public LocalDate getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDate dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 

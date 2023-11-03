@@ -15,6 +15,7 @@ public class EnderecosServiceImpl implements EnderecosService {
 
     @Override
     public List<EnderecosResponseDom> carregarEnderecos() {
+
         return enderecosBusiness.carregarEnderecos();
     }
 
@@ -31,5 +32,10 @@ public class EnderecosServiceImpl implements EnderecosService {
     @Override
     public void deletarEndereco(Long id) {
         enderecosBusiness.deletarEndereco(id);
+    }
+
+    @Override
+    public EnderecosResponseDom carregarEnderecoById(Long id) {
+        return enderecosBusiness.carregarEnderecoById(id);
     }
 }
