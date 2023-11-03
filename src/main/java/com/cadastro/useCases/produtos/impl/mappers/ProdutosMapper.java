@@ -4,13 +4,6 @@ import com.cadastro.useCases.produtos.domanis.ProdutosRequestDom;
 import com.cadastro.useCases.produtos.domanis.ProdutosResponseDom;
 
 public class ProdutosMapper {
-    public static ProdutosResponseDom produtosToProdutosResponseDom(Produtos produtos){
-        ProdutosResponseDom out = new ProdutosResponseDom();
-        out.setNome(produtos.getNome());
-        out.setDescricao(produtos.getDescricao());
-        return out;
-    }
-
     public static Produtos produtosRequestDomToProdutos(ProdutosRequestDom produtosRequestDom){
         Produtos out = new Produtos();
         out.setNome(produtosRequestDom.getNome());
@@ -18,5 +11,14 @@ public class ProdutosMapper {
 
         return out;
     }
+    public static ProdutosResponseDom produtosToProdutosResponseDom(Produtos produtos){
+        ProdutosResponseDom out = new ProdutosResponseDom();
+        out.setId(produtos.getId());
+        out.setNome(produtos.getNome());
+        out.setDescricao(produtos.getDescricao());
+        return out;
+    }
+
+
 
 }
