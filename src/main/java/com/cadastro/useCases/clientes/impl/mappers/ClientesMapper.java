@@ -31,8 +31,7 @@ public class ClientesMapper {
         return out;
     }
 
-    public static Clientes clientesRequestDomToClientes
-            (ClientesRequestDom clientesRequestDom){
+    public static Clientes clientesRequestDomToClientes(ClientesRequestDom clientesRequestDom){
         Clientes out = new Clientes();
         out.setDataNascimento(clientesRequestDom.getDataNascimento());
         out.setEmail(clientesRequestDom.getEmail());
