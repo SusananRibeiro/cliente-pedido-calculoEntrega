@@ -1,6 +1,4 @@
 package com.cadastro.useCases.pedidosItens.impl;
-import com.cadastro.entities.Pedidos;
-import com.cadastro.entities.Produtos;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.pedidosItens.PedidosItensService;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
@@ -12,33 +10,30 @@ import java.util.List;
 public class PedidosItensServiceImpl implements PedidosItensService {
     @Autowired
     private PedidosItensBusinessImpl pedidosItensBusiness;
+
     @Override
     public List<PedidosItensResponseDom> carregarPedidosItens() {
-
         return pedidosItensBusiness.carregarPedidosItens();
     }
 
     @Override
-    public PedidosItensResponseDom criarPedidosItens(PedidosItensRequestDom pedidosItensRequestDom,
-                                                     Produtos produtos, Pedidos pedidos) throws Exception {
-        return pedidosItensBusiness.criarPedidosItens(pedidosItensRequestDom, produtos, pedidos);
+    public PedidosItensResponseDom criarPedidoItens(PedidosItensRequestDom pedidoItens) throws SenacException {
+        return pedidosItensBusiness.criarPedidoItens(pedidoItens);
     }
 
     @Override
-    public PedidosItensResponseDom atualizarPedidosItens(Long id,
-                                             PedidosItensRequestDom pedidosItensRequestDom) throws SenacException {
-        return pedidosItensBusiness.atualizarPedidosItens(id, pedidosItensRequestDom);
+    public PedidosItensResponseDom atualizarPedidoItens(Long id, PedidosItensRequestDom pedidoItens) throws SenacException {
+        return pedidosItensBusiness.atualizarPedidoItens(id, pedidoItens);
     }
 
     @Override
-    public void deletarPedidosItens(Long id) {
-        pedidosItensBusiness.deletarPedidosItens(id);
+    public void deletarPedidoItens(Long id) {
+        pedidosItensBusiness.deletarPedidoItens(id);
 
     }
 
     @Override
-    public PedidosItensResponseDom carregarPedidosItensById(Long id) {
-
-        return pedidosItensBusiness.carregarPedidosItensById(id);
+    public PedidosItensResponseDom carregarPedidoItensById(Long id) throws SenacException {
+        return pedidosItensBusiness.carregarPedidoItensById(id);
     }
 }

@@ -2,7 +2,6 @@ package com.cadastro.controllers;
 import com.cadastro.frameWork.annotions.LogRest;
 import com.cadastro.frameWork.utils.ResponseUtil;
 import com.cadastro.frameWork.utils.SenacException;
-import com.cadastro.useCases.clientes.domanis.ClientesRequestDom;
 import com.cadastro.useCases.pedidos.domanis.PedidosRequestDom;
 import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
 import com.cadastro.useCases.pedidos.impl.PedidosServiceImpl;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
@@ -22,7 +20,7 @@ public class PedidosController {
 
     @GetMapping("/carregar")
     @LogRest
-    public ResponseEntity<List<PedidosResponseDom>> carregarEnderecos(){
+    public ResponseEntity<List<PedidosResponseDom>> carregarPedidos(){
         List<PedidosResponseDom> out = pedidosService.carregarPedidos();
 
         return ResponseEntity.ok(out);
@@ -54,7 +52,7 @@ public class PedidosController {
 
     @PutMapping("/atualizar/{id}")
     @LogRest
-    public ResponseEntity<?> atualizarCliente
+    public ResponseEntity<?> atualizarPedido
             (@PathVariable Long id,
              @RequestBody PedidosRequestDom pedidosRequestDom){
         try {
@@ -73,7 +71,7 @@ public class PedidosController {
 
     @DeleteMapping("/deletar/{id}")
     @LogRest
-    public ResponseEntity<Void> deletarCliente(@PathVariable Long id){
+    public ResponseEntity<Void> deletarPedido(@PathVariable Long id){
         pedidosService.deletarPedido(id);
 
         return ResponseEntity.ok(null);

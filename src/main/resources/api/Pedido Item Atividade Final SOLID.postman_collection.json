@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "ca7b3d82-9edd-4a94-9969-08231008f556",
+		"name": "Pedido Item Atividade Final SOLID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27532932",
+		"_collection_link": "https://warped-firefly-748319.postman.co/workspace/Team-Workspace~62cf569d-daee-4ae8-87d9-2d1be527e9f2/collection/27532932-ca7b3d82-9edd-4a94-9969-08231008f556?action=share&source=collection_link&creator=27532932"
+	},
+	"item": [
+		{
+			"name": "Pedido Itens GET Solid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Itens GET por Id  Solid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/carregar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"carregar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Itens POST Solid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantidade\": 1,\r\n    \"valorUnitario\": 250.99,\r\n    \"produtoId\": 1,\r\n    \"pedidoId\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Itens PUT Solid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantidade\": 1,\r\n    \"valorUnitario\": 950.50,\r\n    \"produtoId\": 2,\r\n    \"pedidoId\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/atualizar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"atualizar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido Itens DELETE Solid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/deletar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"deletar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -89,6 +89,7 @@ public class ClientesBusinessImpl implements ClientesBusiness {
 
     @Override
     public Clientes carregarClienteEntidade(Long id) {
+
         Clientes cliente = clientesRepository.findById(id).get();
 
         return cliente;
