@@ -1,15 +1,14 @@
 package com.cadastro.controllers;
-import com.cadastro.entities.Pedidos;
-import com.cadastro.entities.Produtos;
+
+import com.cadastro.entities.PedidosItens;
 import com.cadastro.frameWork.annotions.LogRest;
 import com.cadastro.frameWork.utils.ResponseUtil;
 import com.cadastro.frameWork.utils.SenacException;
-import com.cadastro.useCases.clientes.domanis.ClientesRequestDom;
-import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
+import com.cadastro.useCases.pedidos.domanis.PedidosRequestDom;
+import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
 import com.cadastro.useCases.pedidosItens.impl.PedidosItensServiceImpl;
-import com.cadastro.useCases.pedidosItens.impl.repositorys.PedidosItensRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,30 +20,30 @@ import java.util.List;
 @Controller
 @RequestMapping("/pedidosItens")
 public class PedidosItensController {
+
     @Autowired
     private PedidosItensServiceImpl pedidosItensService;
-    @Autowired
-    private PedidosItensRepository pedidosItensRepository;
-
-    @GetMapping(path = "/carregar")
+    @GetMapping("/carregar")
     @LogRest
     public ResponseEntity<List<PedidosItensResponseDom>> carregarPedidosItens(){
-        return ResponseEntity.ok(pedidosItensService.carregarPedidosItens());
+        List<PedidosItensResponseDom> out = pedidosItensService.carregarPedidosItens();
+
+        return ResponseEntity.ok(out);
     }
+
     @GetMapping("/carregar/{id}")
     @LogRest
-    public ResponseEntity<PedidosItensResponseDom> carregarPedidosItensById(@PathVariable Long id){
-        return ResponseEntity.ok(pedidosItensService.carregarPedidosItensById(id));
+    public ResponseEntity<PedidosItensResponseDom> carregarPedidoItensById(@PathVariable Long id) throws SenacException {
+        return ResponseEntity.ok(pedidosItensService.carregarPedidoItensById(id));
     }
 
     @PostMapping("/criar")
     @LogRest
-    public ResponseEntity<?> criarPedidosItens
-            (@RequestBody PedidosItensRequestDom pedidosItensRequestDom, Produtos produtos, Pedidos pedidos){
+    public ResponseEntity<?> criarPedidoItens
+            (@RequestBody PedidosItensRequestDom pedidosItensRequestDom){
 
         try{
-            return ResponseEntity.status(HttpStatus.CREATED).body(pedidosItensService.criarPedidosItens(pedidosItensRequestDom,
-                    produtos, pedidos));
+            return ResponseEntity.status(HttpStatus.CREATED).body(pedidosItensService.criarPedidoItens(pedidosItensRequestDom));
         } catch (SenacException e) {
             e.printStackTrace();
             return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
@@ -58,12 +57,12 @@ public class PedidosItensController {
 
     @PutMapping("/atualizar/{id}")
     @LogRest
-    public ResponseEntity<?> atualizarCliente
+    public ResponseEntity<?> atualizarPedidoItens
             (@PathVariable Long id,
              @RequestBody PedidosItensRequestDom pedidosItensRequestDom){
         try {
             return ResponseEntity.ok(
-                    pedidosItensService.atualizarPedidosItens(id, pedidosItensRequestDom));
+                    pedidosItensService.atualizarPedidoItens(id, pedidosItensRequestDom));
         } catch (SenacException e){
             e.printStackTrace();
             return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
@@ -77,9 +76,10 @@ public class PedidosItensController {
 
     @DeleteMapping("/deletar/{id}")
     @LogRest
-    public ResponseEntity<Void> deletarPedidos(@PathVariable Long id){
-        pedidosItensService.deletarPedidosItens(id);
+    public ResponseEntity<Void> deletarPedidoItens(@PathVariable Long id){
+        pedidosItensService.deletarPedidoItens(id);
 
         return ResponseEntity.ok(null);
     }
+
 }
