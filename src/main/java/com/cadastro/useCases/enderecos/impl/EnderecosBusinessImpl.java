@@ -3,8 +3,6 @@ import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Enderecos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
-import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
-import com.cadastro.useCases.clientes.impl.mappers.ClientesMapper;
 import com.cadastro.useCases.enderecos.EnderecosBusiness;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;

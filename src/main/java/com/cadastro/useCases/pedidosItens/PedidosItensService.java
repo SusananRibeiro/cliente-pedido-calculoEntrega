@@ -2,7 +2,6 @@ package com.cadastro.useCases.pedidosItens;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
-
 import java.util.List;
 
 public interface PedidosItensService {

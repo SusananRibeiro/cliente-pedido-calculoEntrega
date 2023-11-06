@@ -1,7 +1,10 @@
 package com.cadastro.useCases.pedidosItens.impl.mappers;
 import com.cadastro.entities.*;
+import com.cadastro.useCases.pedidosItens.domanis.PedidosItensProdutosResponseDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PedidosItensMapper {
 
@@ -27,4 +30,24 @@ public class PedidosItensMapper {
         return out;
     }
 
+    public static PedidosItensResponseDom pedidosItensToPedidosItensProdutosResponseDom(PedidosItens pedidosItens,
+                                                                                        List<Produtos> produtos){
+        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
+        List<PedidosItensProdutosResponseDom> produtosResponseDomList = produtos.stream()
+                .map(PedidosItensMapper::produtosToPedidosItensProdutosResponseDom)
+                .collect(Collectors.toList());
+
+        out.setProdutos(produtosResponseDomList);
+
+        return out;
+    }
+
+    public static PedidosItensProdutosResponseDom produtosToPedidosItensProdutosResponseDom(Produtos produto){
+        PedidosItensProdutosResponseDom out = new PedidosItensProdutosResponseDom();
+        out.setId(produto.getId());
+        out.setNome(produto.getNome());
+        out.setDescricao(produto.getDescricao());
+
+        return out;
+    }
 }

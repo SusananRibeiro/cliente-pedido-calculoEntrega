@@ -1,11 +1,14 @@
 package com.cadastro.useCases.pedidosItens.domanis;
+import java.util.List;
 
 public class PedidosItensResponseDom {
     private Long id; // id
-    private int quantidade;
-    private double valorUnitario;
+    private Integer quantidade;
+    private Double valorUnitario;
     private Long produtoId;
     private Long pedidoId;
+
+    private List<PedidosItensProdutosResponseDom> produtos;
 
     public Long getId() {
         return id;
@@ -15,19 +18,19 @@ public class PedidosItensResponseDom {
         this.id = id;
     }
 
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    public double getValorUnitario() {
+    public Double getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(double valorUnitario) {
+    public void setValorUnitario(Double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
@@ -47,5 +50,23 @@ public class PedidosItensResponseDom {
         this.pedidoId = pedidoId;
     }
 
+    public List<PedidosItensProdutosResponseDom> getProdutos() {
+        return produtos;
+    }
 
+    public void setProdutos(List<PedidosItensProdutosResponseDom> produtos) {
+        this.produtos = produtos;
+    }
+
+    @Override
+    public String toString() {
+        return "PedidosItensResponseDom{" +
+                "id=" + id +
+                ", quantidade=" + quantidade +
+                ", valorUnitario=" + valorUnitario +
+                ", produtoId=" + produtoId +
+                ", pedidoId=" + pedidoId +
+                ", produtos=" + produtos +
+                '}';
+    }
 }

@@ -2,6 +2,7 @@ package com.cadastro.useCases.pedidos.domanis;
 import com.cadastro.entities.Clientes;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class PedidosResponseDom {
     private Long id;
@@ -10,11 +11,13 @@ public class PedidosResponseDom {
 
     private LocalDate dataEntrega;
 
-    private double valorDesconto;
+    private Integer valorDesconto;
 
     private Long clienteId;
 
     private Long enderecoId;
+
+    private List<PedidosProdutosResponseDom> produtos;
 
     public Long getId() {
         return id;
@@ -40,11 +43,11 @@ public class PedidosResponseDom {
         this.dataEntrega = dataEntrega;
     }
 
-    public double getValorDesconto() {
+    public Integer getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(double valorDesconto) {
+    public void setValorDesconto(Integer valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 
@@ -62,5 +65,26 @@ public class PedidosResponseDom {
 
     public void setEnderecoId(Long enderecoId) {
         this.enderecoId = enderecoId;
+    }
+
+    public List<PedidosProdutosResponseDom> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<PedidosProdutosResponseDom> produtos) {
+        this.produtos = produtos;
+    }
+
+    @Override
+    public String toString() {
+        return "PedidosResponseDom{" +
+                "id=" + id +
+                ", dataCriacao=" + dataCriacao +
+                ", dataEntrega=" + dataEntrega +
+                ", valorDesconto=" + valorDesconto +
+                ", clienteId=" + clienteId +
+                ", enderecoId=" + enderecoId +
+                ", produtos=" + produtos +
+                '}';
     }
 }

@@ -1,4 +1,5 @@
 package com.cadastro.useCases.pedidosItens;
+import com.cadastro.entities.PedidosItens;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
@@ -11,4 +12,5 @@ public interface PedidosItensBusiness {
     PedidosItensResponseDom atualizarPedidoItens(Long id, PedidosItensRequestDom pedidoItens) throws SenacException;
     void deletarPedidoItens(Long id);
     PedidosItensResponseDom carregarPedidoItensById(Long id) throws SenacException;
+    PedidosItens carregarPedidoItensEntidade(Long id);
 }
