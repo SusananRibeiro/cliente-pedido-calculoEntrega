@@ -12,27 +12,21 @@ public class Pedidos {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id; //Id
-
+    private Long id;
     @Column
-    private LocalDateTime dataCriacao; // dataCriacao
-
+    private LocalDateTime dataCriacao;
     @Column(nullable = false)
-    private LocalDate dataEntrega; // dataEntrega
-
+    private LocalDate dataEntrega;
     @Column(nullable = false)
-    private double valorDesconto; // valorDesconto
-
+    private Integer valorDesconto;
     @Column
     private LocalDateTime deleted_at;
-
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
-    private Clientes clienteId; // cliente: Fk com cliente
-
+    private Clientes clienteId;
     @OneToOne
     @JoinColumn(name = "endereco_id", nullable = false)
-    private Enderecos enderecoId; // endereço de entrega: Fk com endereço
+    private Enderecos enderecoId;
 
     public Long getId() {
         return id;
@@ -58,11 +52,11 @@ public class Pedidos {
         this.dataEntrega = dataEntrega;
     }
 
-    public double getValorDesconto() {
+    public Integer getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(double valorDesconto) {
+    public void setValorDesconto(Integer valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 

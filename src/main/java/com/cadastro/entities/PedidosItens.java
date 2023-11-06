@@ -3,30 +3,25 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import java.time.LocalDateTime;
-
 @Entity(name = "pedidos_itens")
 @SQLDelete(sql = "UPDATE pedidos_itens SET deleted_at = now() WHERE id=?")
 @Where(clause = "deleted_at is null")
 public class PedidosItens {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id; // id
-
+    private Long id;
     @Column(nullable = false)
-    private int quantidade; // quantidade
+    private int quantidade;
     @Column(nullable = false)
-    private double valorUnitario; // valorUnitario
-
+    private double valorUnitario;
     @Column
     private LocalDateTime deleted_at;
-
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
-    private Produtos produtoId; // produto_id: FK com produto
-
+    private Produtos produtoId;
     @ManyToOne
     @JoinColumn(name = "pedido_id", nullable = false)
-    private Pedidos pedidoId; // pedidoId: FK com pedido
+    private Pedidos pedidoId;
 
     public Long getId() {
         return id;

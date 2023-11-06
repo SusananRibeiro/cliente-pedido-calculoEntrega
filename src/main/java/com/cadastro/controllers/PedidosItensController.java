@@ -1,11 +1,8 @@
 package com.cadastro.controllers;
 
-import com.cadastro.entities.PedidosItens;
 import com.cadastro.frameWork.annotions.LogRest;
 import com.cadastro.frameWork.utils.ResponseUtil;
 import com.cadastro.frameWork.utils.SenacException;
-import com.cadastro.useCases.pedidos.domanis.PedidosRequestDom;
-import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
 import com.cadastro.useCases.pedidosItens.impl.PedidosItensServiceImpl;
@@ -34,6 +31,7 @@ public class PedidosItensController {
     @GetMapping("/carregar/{id}")
     @LogRest
     public ResponseEntity<PedidosItensResponseDom> carregarPedidoItensById(@PathVariable Long id) throws SenacException {
+
         return ResponseEntity.ok(pedidosItensService.carregarPedidoItensById(id));
     }
 

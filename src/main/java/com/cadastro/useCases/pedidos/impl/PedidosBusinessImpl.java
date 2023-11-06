@@ -1,7 +1,5 @@
 package com.cadastro.useCases.pedidos.impl;
-import com.cadastro.entities.Clientes;
-import com.cadastro.entities.Enderecos;
-import com.cadastro.entities.Pedidos;
+import com.cadastro.entities.*;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.pedidos.PedidosBusiness;
@@ -10,6 +8,7 @@ import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
 import com.cadastro.useCases.pedidos.impl.mappers.PedidosMapper;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosClientesRepository;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosEnderecosRepository;
+import com.cadastro.useCases.pedidos.impl.repositorys.PedidosProdutosRepository;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
@@ -27,6 +26,9 @@ public class PedidosBusinessImpl implements PedidosBusiness {
 
     @Autowired
     private PedidosEnderecosRepository pedidosEnderecosRepository;
+
+    @Autowired
+    private PedidosProdutosRepository pedidosProdutosRepository;
 
     @Override
     public List<PedidosResponseDom> carregarPedidos() {
@@ -106,7 +108,6 @@ public class PedidosBusinessImpl implements PedidosBusiness {
         pedidosRepository.deleteById(id);
 
     }
-
     @Override
     public PedidosResponseDom carregarPedidoById(Long id) throws SenacException {
         Optional<Pedidos> optionalPedidos = pedidosRepository.findById(id);
@@ -114,9 +115,17 @@ public class PedidosBusinessImpl implements PedidosBusiness {
             throw new SenacException("Pedido não encontrado");
         }
         Pedidos pedidos = pedidosRepository.findById(id).get();
-        PedidosResponseDom out = PedidosMapper.pedidosToPedidosResponseDom(pedidos);
+        List<Produtos> produtos = pedidosProdutosRepository.carregarProdutoByPedidosId(id);
+        PedidosResponseDom out = PedidosMapper.pedidosToPedidosProdutosResponseDom(pedidos, produtos);
         return out;
 
+    }
+
+    @Override
+    public Pedidos carregarPedidoEntidade(Long id) {
+        Pedidos pedidos = pedidosRepository.findById(id).get();
+
+        return pedidos;
     }
 
     private List<String> validacaoManutencaoPedido(PedidosRequestDom pedido){

@@ -11,22 +11,16 @@ public class Enderecos {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String rua;
-
     @Column
     private String bairro;
-
     @Column
     private String cidade;
-
     @Column
     private String estado;
-
     @Column
     private LocalDateTime deleted_at;
-
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Clientes cliente;

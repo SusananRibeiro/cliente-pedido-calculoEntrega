@@ -20,17 +20,6 @@ public class ClientesMapper {
         return out;
     }
 
-    public static ClientesResponseDom clientesToClientesResponseDom(Clientes clientes, List<Enderecos> enderecos){
-        ClientesResponseDom out = ClientesMapper.clientesToClientesResponseDom(clientes);
-        List<ClientesEnderecosResponseDom> enderecosResponseDomList = enderecos.stream()
-                .map(ClientesMapper::enderecosToClientesEnderecosResponseDom)
-                .collect(Collectors.toList());
-
-        out.setEnderecos(enderecosResponseDomList);
-
-        return out;
-    }
-
     public static Clientes clientesRequestDomToClientes(ClientesRequestDom clientesRequestDom){
         Clientes out = new Clientes();
         out.setDataNascimento(clientesRequestDom.getDataNascimento());
@@ -38,6 +27,17 @@ public class ClientesMapper {
         out.setNome(clientesRequestDom.getNome());
         out.setTelefone(clientesRequestDom.getTelefone());
         out.setSobreNome(clientesRequestDom.getSobrenome());
+
+        return out;
+    }
+
+    public static ClientesResponseDom clientesToClientesResponseDom(Clientes clientes, List<Enderecos> enderecos){
+        ClientesResponseDom out = ClientesMapper.clientesToClientesResponseDom(clientes);
+        List<ClientesEnderecosResponseDom> enderecosResponseDomList = enderecos.stream()
+                .map(ClientesMapper::enderecosToClientesEnderecosResponseDom)
+                .collect(Collectors.toList());
+
+        out.setEnderecos(enderecosResponseDomList);
 
         return out;
     }

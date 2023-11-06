@@ -2,7 +2,6 @@ package com.cadastro.controllers;
 import com.cadastro.frameWork.annotions.LogRest;
 import com.cadastro.frameWork.utils.ResponseUtil;
 import com.cadastro.frameWork.utils.SenacException;
-import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom;
 import com.cadastro.useCases.enderecos.domanis.EnderecosResponseDom;
 import com.cadastro.useCases.enderecos.impl.EnderecosServiceImpl;

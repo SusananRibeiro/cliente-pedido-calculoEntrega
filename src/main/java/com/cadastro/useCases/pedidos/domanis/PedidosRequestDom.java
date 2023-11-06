@@ -8,7 +8,7 @@ public class PedidosRequestDom {
 
     private LocalDate dataEntrega;
 
-    private double valorDesconto;
+    private Integer valorDesconto;
 
     private Long clienteId;
 
@@ -30,11 +30,11 @@ public class PedidosRequestDom {
         this.dataEntrega = dataEntrega;
     }
 
-    public double getValorDesconto() {
+    public Integer getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(double valorDesconto) {
+    public void setValorDesconto(Integer valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 

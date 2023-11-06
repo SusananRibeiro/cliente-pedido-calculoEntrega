@@ -1,24 +1,24 @@
 package com.cadastro.useCases.pedidosItens.domanis;
 
 public class PedidosItensRequestDom {
-    private int quantidade;
-    private double valorUnitario;
+    private Integer quantidade;
+    private Double valorUnitario;
     private Long produtoId;
     private Long pedidoId;
 
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    public double getValorUnitario() {
+    public Double getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(double valorUnitario) {
+    public void setValorUnitario(Double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 

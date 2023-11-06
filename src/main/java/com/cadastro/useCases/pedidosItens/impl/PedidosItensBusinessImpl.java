@@ -2,6 +2,8 @@ package com.cadastro.useCases.pedidosItens.impl;
 import com.cadastro.entities.*;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
+import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
+import com.cadastro.useCases.clientes.impl.mappers.ClientesMapper;
 import com.cadastro.useCases.pedidosItens.PedidosItensBusiness;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
@@ -101,32 +103,44 @@ public class PedidosItensBusinessImpl implements PedidosItensBusiness {
 
     @Override
     public PedidosItensResponseDom carregarPedidoItensById(Long id) throws SenacException {
+
         Optional<PedidosItens> optionalPedidosItens = pedidosItensRepository.findById(id);
+
         if(!optionalPedidosItens.isPresent()) {
             throw new SenacException("Item do Pedido não encontrado");
         }
+
         PedidosItens pedidosItens = pedidosItensRepository.findById(id).get();
-        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
+        List<Produtos> produtos = pedidosItensProdutosRepository.carregarProdutoByPedidosItensId(id);
+        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensProdutosResponseDom(pedidosItens, produtos);
         return out;
+
+    }
+
+    @Override
+    public PedidosItens carregarPedidoItensEntidade(Long id) {
+        PedidosItens pedidosItens = pedidosItensRepository.findById(id).get();
+
+        return pedidosItens;
     }
 
     private List<String> validacaoManutencaoPedidoItens(PedidosItensRequestDom pedidosItensRequestDom){
         List<String> messages = new ArrayList<>();
 
-//        if(pedidosItensRequestDom.getQuantidade() == null){
-//            messages.add("Data de entrega não informada!");
-//        }
-//
-//        if(pedidosItensRequestDom.getValorUnitario() == null || pedidosItensRequestDom.getValorUnitario() < 1){
-//            messages.add("Código do cliente não informado ou inválido!");
-//        }
+        if(pedidosItensRequestDom.getQuantidade() == null || pedidosItensRequestDom.getQuantidade() < 1){
+            messages.add("Quantidade não informada ou inválida!");
+        }
+
+        if(pedidosItensRequestDom.getValorUnitario() == null || pedidosItensRequestDom.getValorUnitario() < 1){
+            messages.add("Valor unitário não informado ou inválido!");
+        }
 
         if(pedidosItensRequestDom.getProdutoId() == null || pedidosItensRequestDom.getProdutoId() < 1){
             messages.add("Código do produto não informado ou inválido!");
         }
 
         if(pedidosItensRequestDom.getPedidoId() == null || pedidosItensRequestDom.getPedidoId() < 1){
-            messages.add("Código do produto não informado ou inválido!");
+            messages.add("Código do pedido não informado ou inválido!");
         }
 
         return messages;
