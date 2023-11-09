@@ -1,5 +1,6 @@
 package com.cadastro.useCases.pedidosItens.domanis;
-import java.util.List;
+
+import com.cadastro.entities.Produtos;
 
 public class PedidosItensResponseDom {
     private Long id; // id
@@ -7,8 +8,7 @@ public class PedidosItensResponseDom {
     private Double valorUnitario;
     private Long produtoId;
     private Long pedidoId;
-
-    private List<PedidosItensProdutosResponseDom> produtos;
+    private String nomeDoProduto;
 
     public Long getId() {
         return id;
@@ -27,15 +27,15 @@ public class PedidosItensResponseDom {
     }
 
     public Double getValorUnitario() {
-        return valorUnitario;
+        return this.valorUnitario;
     }
 
     public void setValorUnitario(Double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
-    public Long getProdutoId() {
-        return produtoId;
+    public Long getProdutoId(Produtos produtoId) {
+        return this.produtoId;
     }
 
     public void setProdutoId(Long produtoId) {
@@ -50,23 +50,13 @@ public class PedidosItensResponseDom {
         this.pedidoId = pedidoId;
     }
 
-    public List<PedidosItensProdutosResponseDom> getProdutos() {
-        return produtos;
+    public String getNomeDoProduto() {
+        return nomeDoProduto;
     }
 
-    public void setProdutos(List<PedidosItensProdutosResponseDom> produtos) {
-        this.produtos = produtos;
+    public void setNomeDoProduto(String nomeDoProduto) {
+        this.nomeDoProduto = nomeDoProduto;
     }
 
-    @Override
-    public String toString() {
-        return "PedidosItensResponseDom{" +
-                "id=" + id +
-                ", quantidade=" + quantidade +
-                ", valorUnitario=" + valorUnitario +
-                ", produtoId=" + produtoId +
-                ", pedidoId=" + pedidoId +
-                ", produtos=" + produtos +
-                '}';
-    }
+
 }

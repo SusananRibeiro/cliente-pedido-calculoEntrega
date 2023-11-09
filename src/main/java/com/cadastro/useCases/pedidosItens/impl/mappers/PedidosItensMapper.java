@@ -26,28 +26,27 @@ public class PedidosItensMapper {
         out.setValorUnitario(pedidosItens.getValorUnitario());
         out.setProdutoId(pedidosItens.getProdutoId().getId());
         out.setPedidoId(pedidosItens.getPedidoId().getId());
+        out.setNomeDoProduto(pedidosItens.getProdutoId().getNome());
 
         return out;
     }
 
-    public static PedidosItensResponseDom pedidosItensToPedidosItensProdutosResponseDom(PedidosItens pedidosItens,
-                                                                                        List<Produtos> produtos){
-        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
-        List<PedidosItensProdutosResponseDom> produtosResponseDomList = produtos.stream()
-                .map(PedidosItensMapper::produtosToPedidosItensProdutosResponseDom)
-                .collect(Collectors.toList());
-
-        out.setProdutos(produtosResponseDomList);
-
-        return out;
-    }
-
-    public static PedidosItensProdutosResponseDom produtosToPedidosItensProdutosResponseDom(Produtos produto){
-        PedidosItensProdutosResponseDom out = new PedidosItensProdutosResponseDom();
-        out.setId(produto.getId());
-        out.setNome(produto.getNome());
-        out.setDescricao(produto.getDescricao());
-
-        return out;
-    }
+//    public static PedidosItensResponseDom pedidosItensToPedidosItensProdutosResponseDom(PedidosItens pedidosItens,
+//                                                                                        List<Produtos> produtos){
+//        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
+//        List<PedidosItensProdutosResponseDom> produtosResponseDomList = produtos.stream()
+//                .map(PedidosItensMapper::produtosToPedidosItensProdutosResponseDom)
+//                .collect(Collectors.toList());
+//
+//        out.setProdutosLista(produtosResponseDomList);
+//
+//        return out;
+//    }
+//
+//    public static PedidosItensProdutosResponseDom produtosToPedidosItensProdutosResponseDom(Produtos produto){
+//        PedidosItensProdutosResponseDom out = new PedidosItensProdutosResponseDom();
+//        out.setNome(produto.getNome());
+//
+//        return out;
+//    }
 }

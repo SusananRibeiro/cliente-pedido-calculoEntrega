@@ -17,8 +17,8 @@ public class Pedidos {
     private LocalDateTime dataCriacao;
     @Column(nullable = false)
     private LocalDate dataEntrega;
-    @Column(nullable = false)
-    private Integer valorDesconto;
+    @Column
+    private double valorDesconto;
     @Column
     private LocalDateTime deleted_at;
     @ManyToOne
@@ -52,11 +52,11 @@ public class Pedidos {
         this.dataEntrega = dataEntrega;
     }
 
-    public Integer getValorDesconto() {
+    public double getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(Integer valorDesconto) {
+    public void setValorDesconto(double valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 

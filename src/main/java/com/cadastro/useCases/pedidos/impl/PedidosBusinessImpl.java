@@ -8,8 +8,9 @@ import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
 import com.cadastro.useCases.pedidos.impl.mappers.PedidosMapper;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosClientesRepository;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosEnderecosRepository;
-import com.cadastro.useCases.pedidos.impl.repositorys.PedidosProdutosRepository;
+import com.cadastro.useCases.pedidos.impl.repositorys.PedidosPedidosItensRepository;
 import com.cadastro.useCases.pedidos.impl.repositorys.PedidosRepository;
+import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class PedidosBusinessImpl implements PedidosBusiness {
     private PedidosEnderecosRepository pedidosEnderecosRepository;
 
     @Autowired
-    private PedidosProdutosRepository pedidosProdutosRepository;
+    private PedidosPedidosItensRepository pedidosItensRepository;
 
     @Override
     public List<PedidosResponseDom> carregarPedidos() {
@@ -111,12 +112,25 @@ public class PedidosBusinessImpl implements PedidosBusiness {
     @Override
     public PedidosResponseDom carregarPedidoById(Long id) throws SenacException {
         Optional<Pedidos> optionalPedidos = pedidosRepository.findById(id);
+
         if(!optionalPedidos.isPresent()) {
             throw new SenacException("Pedido não encontrado");
         }
-        Pedidos pedidos = pedidosRepository.findById(id).get();
-        List<Produtos> produtos = pedidosProdutosRepository.carregarProdutoByPedidosId(id);
-        PedidosResponseDom out = PedidosMapper.pedidosToPedidosProdutosResponseDom(pedidos, produtos);
+        Pedidos pedidos = optionalPedidos.get();
+        List<PedidosItens> pedidosItensList = pedidosItensRepository.carregarPedidosItensByPedidoId(id);
+        PedidosResponseDom out = PedidosMapper.pedidosToPedidosProdutosResponseDom(pedidos, pedidosItensList);
+
+        double valorTotal = 0;
+
+        for(PedidosItensResponseDom d : out.getPedidosItens()) {
+            double valorItem = d.getValorUnitario() * d.getQuantidade();
+            valorTotal += valorItem;
+            System.out.println(d.getValorUnitario());
+
+        }
+
+        out.setValorTotal(valorTotal - out.getValorDesconto());
+
         return out;
 
     }
