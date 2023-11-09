@@ -4,6 +4,8 @@ import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.clientes.domanis.ClientesResponseDom;
 import com.cadastro.useCases.clientes.impl.mappers.ClientesMapper;
+import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
+import com.cadastro.useCases.pedidos.impl.mappers.PedidosMapper;
 import com.cadastro.useCases.pedidosItens.PedidosItensBusiness;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom;
 import com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom;
@@ -105,14 +107,11 @@ public class PedidosItensBusinessImpl implements PedidosItensBusiness {
     public PedidosItensResponseDom carregarPedidoItensById(Long id) throws SenacException {
 
         Optional<PedidosItens> optionalPedidosItens = pedidosItensRepository.findById(id);
-
         if(!optionalPedidosItens.isPresent()) {
             throw new SenacException("Item do Pedido não encontrado");
         }
-
         PedidosItens pedidosItens = pedidosItensRepository.findById(id).get();
-        List<Produtos> produtos = pedidosItensProdutosRepository.carregarProdutoByPedidosItensId(id);
-        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensProdutosResponseDom(pedidosItens, produtos);
+        PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
         return out;
 
     }

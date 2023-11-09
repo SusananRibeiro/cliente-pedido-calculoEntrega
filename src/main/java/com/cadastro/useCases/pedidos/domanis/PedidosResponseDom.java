@@ -1,5 +1,4 @@
 package com.cadastro.useCases.pedidos.domanis;
-import com.cadastro.entities.Clientes;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,13 +10,15 @@ public class PedidosResponseDom {
 
     private LocalDate dataEntrega;
 
-    private Integer valorDesconto;
+    private Double valorDesconto;
 
     private Long clienteId;
 
     private Long enderecoId;
 
-    private List<PedidosProdutosResponseDom> produtos;
+    private List<PedidosPedidosItensResponse> pedidosItens;
+
+    private Double valorTotal;
 
     public Long getId() {
         return id;
@@ -43,11 +44,11 @@ public class PedidosResponseDom {
         this.dataEntrega = dataEntrega;
     }
 
-    public Integer getValorDesconto() {
+    public Double getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(Integer valorDesconto) {
+    public void setValorDesconto(Double valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 
@@ -67,12 +68,20 @@ public class PedidosResponseDom {
         this.enderecoId = enderecoId;
     }
 
-    public List<PedidosProdutosResponseDom> getProdutos() {
-        return produtos;
+    public List<PedidosPedidosItensResponse> getPedidosItens() {
+        return pedidosItens;
     }
 
-    public void setProdutos(List<PedidosProdutosResponseDom> produtos) {
-        this.produtos = produtos;
+    public void setPedidosItens(List<PedidosPedidosItensResponse> pedidosItens) {
+        this.pedidosItens = pedidosItens;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     @Override
@@ -84,7 +93,8 @@ public class PedidosResponseDom {
                 ", valorDesconto=" + valorDesconto +
                 ", clienteId=" + clienteId +
                 ", enderecoId=" + enderecoId +
-                ", produtos=" + produtos +
+                ", pedidosItens=" + pedidosItens +
+                ", valorTotal=" + valorTotal +
                 '}';
     }
 }

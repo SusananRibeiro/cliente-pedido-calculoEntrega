@@ -1,8 +1,10 @@
 package com.cadastro.useCases.pedidos.impl.mappers;
 import com.cadastro.entities.*;
-import com.cadastro.useCases.pedidos.domanis.PedidosProdutosResponseDom;
+import com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse;
 import com.cadastro.useCases.pedidos.domanis.PedidosRequestDom;
 import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +12,7 @@ public class PedidosMapper {
 
     public static Pedidos pedidosResquestDomToPedidos(PedidosRequestDom pedidos, Clientes cliente, Enderecos enderecos){
         Pedidos out = new Pedidos();
-        out.setDataCriacao(pedidos.getDataCriacao());
+        out.setDataCriacao(LocalDateTime.now());
         out.setDataEntrega(pedidos.getDataEntrega());
         out.setValorDesconto(pedidos.getValorDesconto());
         out.setClienteId(cliente);
@@ -27,26 +29,31 @@ public class PedidosMapper {
         out.setValorDesconto(pedidos.getValorDesconto());
         out.setClienteId(pedidos.getClienteId().getId());
         out.setEnderecoId(pedidos.getEnderecoId().getId());
+        out.getValorTotal();
 
         return out;
     }
 
     public static PedidosResponseDom pedidosToPedidosProdutosResponseDom(Pedidos pedido,
-                                                                                        List<Produtos> produtos){
+                                                                                        List<PedidosItens> pedidosItens){
         PedidosResponseDom out = PedidosMapper.pedidosToPedidosResponseDom(pedido);
-        List<PedidosProdutosResponseDom> produtosResponseDomList = produtos.stream()
-                .map(PedidosMapper::produtosToPedidosProdutosResponseDom)
+        List<PedidosPedidosItensResponse> pedidosPedidosItensResponseList = pedidosItens.stream()
+                .map(PedidosMapper::pedidosItensToPedidosProdutosResponseDom)
                 .collect(Collectors.toList());
 
-        out.setProdutos(produtosResponseDomList);
+        out.setPedidosItens(pedidosPedidosItensResponseList);
 
         return out;
     }
 
-    public static PedidosProdutosResponseDom produtosToPedidosProdutosResponseDom(Produtos produto){
-        PedidosProdutosResponseDom out = new PedidosProdutosResponseDom();
-        out.setId(produto.getId());
-        out.setNome(produto.getNome());
+    public static PedidosPedidosItensResponse pedidosItensToPedidosProdutosResponseDom(PedidosItens pedidosItens){
+        PedidosPedidosItensResponse out = new PedidosPedidosItensResponse();
+        out.setId(pedidosItens.getId());
+        out.setQuantidade(pedidosItens.getQuantidade());
+        out.setValorUnitario(pedidosItens.getValorUnitario());
+        out.setProdutoId(pedidosItens.getProdutoId().getId());
+        out.setPedidoId(pedidosItens.getPedidoId().getId());
+        out.setNomeDoProduto(pedidosItens.getProdutoId().getNome());
         return out;
     }
 
