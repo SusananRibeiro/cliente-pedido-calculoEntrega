@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"quantidade\": 20,\r\n    \"valorUnitario\": 5.99,\r\n    \"produtoId\": 8,\r\n    \"pedidoId\": 9\r\n}",
+					"raw": "{\r\n    \"quantidade\": 1,\r\n    \"valorUnitario\": 10.50,\r\n    \"produtoId\": 6,\r\n    \"pedidoId\": 5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"quantidade\": 15,\r\n    \"valorUnitario\": 5.99,\r\n    \"produtoId\": 8,\r\n    \"pedidoId\": 9\r\n}",
+					"raw": "{\r\n    \"quantidade\": 1,\r\n    \"valorUnitario\": 5.0,\r\n    \"produtoId\": 6,\r\n    \"pedidoId\": 5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,7 +92,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/pedidosItens/atualizar/13",
+					"raw": "http://localhost:8080/pedidosItens/atualizar/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -101,7 +101,7 @@
 					"path": [
 						"pedidosItens",
 						"atualizar",
-						"13"
+						"6"
 					]
 				}
 			},
@@ -113,7 +113,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pedidosItens/deletar/13",
+					"raw": "http://localhost:8080/pedidosItens/deletar/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,7 +122,7 @@
 					"path": [
 						"pedidosItens",
 						"deletar",
-						"13"
+						"7"
 					]
 				}
 			},

@@ -17,7 +17,7 @@ public class Clientes {
     @Column(nullable = false)
     private String nome;
 
-    @Column
+    @Column(nullable = false)
     private String sobreNome;
 
     @Column(nullable = false)
