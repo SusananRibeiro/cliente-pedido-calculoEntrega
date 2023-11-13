@@ -29,7 +29,7 @@ public class EnderecosController {
 
     @GetMapping("/carregar/{id}")
     @LogRest
-    public ResponseEntity<EnderecosResponseDom> carregarEnderecoById(@PathVariable Long id){
+    public ResponseEntity<EnderecosResponseDom> carregarEnderecoById(@PathVariable Long id) throws SenacException {
         return ResponseEntity.ok(enderecosService.carregarEnderecoById(id));
     }
 

@@ -10,5 +10,5 @@ public interface ProdutosService {
     ProdutosResponseDom criarProduto(ProdutosRequestDom produtosRequestDom) throws Exception;
     ProdutosResponseDom atualizarProduto(Long id, ProdutosRequestDom produtosRequestDom) throws SenacException;
     void deletarProduto(Long id);
-    ProdutosResponseDom carregarProdutoById(Long id);
+    ProdutosResponseDom carregarProdutoById(Long id) throws SenacException;
 }

@@ -105,12 +105,11 @@ public class PedidosItensBusinessImpl implements PedidosItensBusiness {
 
     @Override
     public PedidosItensResponseDom carregarPedidoItensById(Long id) throws SenacException {
-
         Optional<PedidosItens> optionalPedidosItens = pedidosItensRepository.findById(id);
         if(!optionalPedidosItens.isPresent()) {
             throw new SenacException("Item do Pedido não encontrado");
         }
-        PedidosItens pedidosItens = pedidosItensRepository.findById(id).get();
+        PedidosItens pedidosItens = optionalPedidosItens.get();
         PedidosItensResponseDom out = PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedidosItens);
         return out;
 

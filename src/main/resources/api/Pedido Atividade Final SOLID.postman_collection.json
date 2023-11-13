@@ -33,7 +33,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pedidos/carregar/1",
+					"raw": "http://localhost:8080/pedidos/carregar/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -42,7 +42,7 @@
 					"path": [
 						"pedidos",
 						"carregar",
-						"1"
+						"5"
 					]
 				}
 			},
@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"dataCriacao\": \"2023-12-20\",\r\n    \"dataEntrega\": \"2023-12-20\",\r\n    \"valorDesconto\": 0,\r\n    \"clienteId\": 7,\r\n    \"enderecoId\": 8\r\n}",
+					"raw": "{\r\n    \"dataEntrega\": \"2024-01-20\",\r\n    \"clienteId\": 14,\r\n    \"enderecoId\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"dataCriacao\": null,\r\n    \"dataEntrega\": \"2023-12-20\",\r\n    \"valorDesconto\": 0.0,\r\n    \"clienteId\": 2,\r\n    \"enderecoId\": 2\r\n}",
+					"raw": "{\r\n    \"dataEntrega\": \"2024-01-15\",\r\n    \"clienteId\": 14,\r\n    \"enderecoId\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,7 +92,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/pedidos/atualizar/2",
+					"raw": "http://localhost:8080/pedidos/atualizar/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -101,7 +101,7 @@
 					"path": [
 						"pedidos",
 						"atualizar",
-						"2"
+						"11"
 					]
 				}
 			},
@@ -113,7 +113,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pedidos/deletar/2",
+					"raw": "http://localhost:8080/pedidos/deletar/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,7 +122,7 @@
 					"path": [
 						"pedidos",
 						"deletar",
-						"2"
+						"11"
 					]
 				}
 			},

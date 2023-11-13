@@ -1,4 +1,5 @@
 package com.cadastro.useCases.produtos.impl;
+import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Produtos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
@@ -83,8 +84,13 @@ public class ProdutosBusinessImpl implements ProdutosBusiness {
     }
 
     @Override
-    public ProdutosResponseDom carregarProdutoById(Long id) {
-        Produtos produtos = produtosRepository.findById(id).get();
+    public ProdutosResponseDom carregarProdutoById(Long id) throws SenacException {
+        Optional<Produtos> optionalProduto = produtosRepository.findById(id);
+
+        if(!optionalProduto.isPresent()) {
+            throw new SenacException("Produto não encontrado");
+        }
+        Produtos produtos = optionalProduto.get();
 
         ProdutosResponseDom out = ProdutosMapper.produtosToProdutosResponseDom(produtos);
 

@@ -36,7 +36,7 @@ public class ClientesServiceImpl implements ClientesService {
     }
 
     @Override
-    public ClientesResponseDom carregarClienteById(Long id) {
+    public ClientesResponseDom carregarClienteById(Long id) throws SenacException {
 
         return clientesBusiness.carregarClienteById(id);
     }

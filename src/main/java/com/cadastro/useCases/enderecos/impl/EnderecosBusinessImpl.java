@@ -1,6 +1,7 @@
 package com.cadastro.useCases.enderecos.impl;
 import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Enderecos;
+import com.cadastro.entities.Pedidos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.useCases.enderecos.EnderecosBusiness;
@@ -91,8 +92,14 @@ public class EnderecosBusinessImpl implements EnderecosBusiness {
     }
 
     @Override
-    public EnderecosResponseDom carregarEnderecoById(Long id) {
-        Enderecos endereco = enderecosRepository.findById(id).get();
+    public EnderecosResponseDom carregarEnderecoById(Long id) throws SenacException {
+        Optional<Enderecos> optionalEndereco = enderecosRepository.findById(id);
+
+        if(!optionalEndereco.isPresent()) {
+            throw new SenacException("Endereços não encontrado");
+        }
+
+        Enderecos endereco = optionalEndereco.get();
         EnderecosResponseDom out = EnderecosMapper.enderecosToEnderecosResponseDom(endereco);
         return out;
     }

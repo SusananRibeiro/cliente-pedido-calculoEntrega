@@ -35,7 +35,7 @@ public class EnderecosServiceImpl implements EnderecosService {
     }
 
     @Override
-    public EnderecosResponseDom carregarEnderecoById(Long id) {
+    public EnderecosResponseDom carregarEnderecoById(Long id) throws SenacException {
         return enderecosBusiness.carregarEnderecoById(id);
     }
 }

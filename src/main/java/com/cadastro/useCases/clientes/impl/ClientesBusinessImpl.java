@@ -1,6 +1,7 @@
 package com.cadastro.useCases.clientes.impl;
 import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Enderecos;
+import com.cadastro.entities.Pedidos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.frameWork.utils.StringUtil;
@@ -95,11 +96,14 @@ public class ClientesBusinessImpl implements ClientesBusiness {
     }
 
     @Override
-    public ClientesResponseDom carregarClienteById(Long id) {
-        Clientes cliente = clientesRepository.findById(id).get();
+    public ClientesResponseDom carregarClienteById(Long id) throws SenacException {
+        Optional<Clientes> optionalCliente = clientesRepository.findById(id);
 
+        if(!optionalCliente.isPresent()) {
+            throw new SenacException("Cliente não encontrado");
+        }
+        Clientes cliente = optionalCliente.get();
         List<Enderecos> enderecos = clientesEnderecosRespository.carregarEnderecosByClienteId(id);
-
         ClientesResponseDom out = ClientesMapper.clientesToClientesResponseDom(cliente, enderecos);
 
         return out;
