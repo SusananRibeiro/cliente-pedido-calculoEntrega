@@ -9,5 +9,5 @@ public interface EnderecosBusiness {
     EnderecosResponseDom criarEndereco(EnderecosRequestDom endereco) throws SenacException;
     EnderecosResponseDom atualizarEndereco(Long id, EnderecosRequestDom endereco) throws SenacException;
     void deletarEndereco(Long id);
-    EnderecosResponseDom carregarEnderecoById(Long id);
+    EnderecosResponseDom carregarEnderecoById(Long id) throws SenacException;
 }

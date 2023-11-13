@@ -1,8 +1,507 @@
-2023-11-09 09:30:21,317 WARN org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
-2023-11-09 09:30:31,758 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-2023-11-09 09:31:19,274 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.carregarPedidoById(Long) 
-2023-11-09 09:31:19,274 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 5 
-2023-11-09 09:31:19,284 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,PedidosResponseDom{id=5, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=9, enderecoId=11, pedidosItens=[com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse@47b00f9f], valorTotal=301.98},[]> 
-2023-11-09 09:39:13,082 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.carregarPedidos() 
-2023-11-09 09:39:13,083 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: null 
-2023-11-09 09:39:13,084 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <200 OK OK,[PedidosResponseDom{id=1, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=8, enderecoId=9, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=2, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=1, enderecoId=4, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=3, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=8, enderecoId=10, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=5, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=9, enderecoId=11, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=6, dataCriacao=2023-10-20T00:00, dataEntrega=2023-11-20, valorDesconto=0.0, clienteId=10, enderecoId=12, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=9, dataCriacao=2023-10-20T00:00, dataEntrega=2023-10-20, valorDesconto=0.0, clienteId=12, enderecoId=14, pedidosItens=null, valorTotal=null}],[]> 
+2023-11-13 09:41:21,256 WARN org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2023-11-13 09:41:28,083 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-13 09:41:34,211 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.carregarClientes() 
+2023-11-13 09:41:34,211 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: null 
+2023-11-13 09:41:34,217 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,[ClientesResponseDom{id=1, nome='Teste', sobrenome='Sobrenome', dataNascimento=1990-02-20, telefone='48990004563', email='teste3@gmail.com', enderecos=null}, ClientesResponseDom{id=2, nome='Teste 2', sobrenome='Sobrenome 2', dataNascimento=1990-02-20, telefone='48990004563', email='email@mail.com', enderecos=null}, ClientesResponseDom{id=4, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=5, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=6, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=7, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=8, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=9, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=10, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=11, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=12, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}, ClientesResponseDom{id=13, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=null}],[]> 
+2023-11-13 09:41:40,639 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.cadastro.frameWork.utils.SenacException: Cliente não encontrado] with root cause 
+com.cadastro.frameWork.utils.SenacException: Cliente não encontrado
+	at com.cadastro.useCases.clientes.impl.ClientesBusinessImpl.carregarClienteById(ClientesBusinessImpl.java:103)
+	at com.cadastro.useCases.clientes.impl.ClientesServiceImpl.carregarClienteById(ClientesServiceImpl.java:41)
+	at com.cadastro.controllers.ClientesController.carregarClienteById(ClientesController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.cadastro.frameWork.annotions.LogRestAspect.logRequisicao(LogRestAspect.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.cadastro.controllers.ClientesController$$SpringCGLIB$$0.carregarClienteById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-13 09:42:00,243 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.carregarClienteById(Long) 
+2023-11-13 09:42:00,244 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: 4 
+2023-11-13 09:42:00,247 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <200 OK OK,ClientesResponseDom{id=4, nome='Teste 4', sobrenome='Sobrenome 4', dataNascimento=1990-02-20, telefone='48990004563', email='teste4@gmail.com', enderecos=[EnderecosResponseDom{id=4, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=5, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=6, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=7, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=8, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=9, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=10, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=11, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=12, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}, EnderecosResponseDom{id=13, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=null}]},[]> 
+2023-11-13 09:43:16,536 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:43:16,537 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com'} 
+2023-11-13 09:43:16,538 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <201 CREATED Created,ClientesResponseDom{id=14, nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com', enderecos=null},[]> 
+2023-11-13 09:43:25,387 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:43:25,388 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: ClientesRequestDom{nome='null', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com'} 
+2023-11-13 09:43:25,388 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui nome!]},[]> 
+2023-11-13 09:43:40,598 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:43:40,599 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: ClientesRequestDom{nome='', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com'} 
+2023-11-13 09:43:40,600 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui nome!]},[]> 
+2023-11-13 09:43:48,212 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:43:48,213 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='null', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com'} 
+2023-11-13 09:43:48,214 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui sobrenome!]},[]> 
+2023-11-13 09:44:12,536 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:44:12,537 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com'} 
+2023-11-13 09:44:12,538 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui sobrenome!]},[]> 
+2023-11-13 09:44:45,547 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:44:45,547 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='null'} 
+2023-11-13 09:44:45,548 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui email!]},[]> 
+2023-11-13 09:44:54,970 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:44:54,970 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email=''} 
+2023-11-13 09:44:54,971 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui email!]},[]> 
+2023-11-13 09:45:11,439 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:45:11,440 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: ClientesRequestDom{nome='null', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email=''} 
+2023-11-13 09:45:11,441 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui nome!, Cliente informado não possui email!]},[]> 
+2023-11-13 09:45:30,184 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.criarCliente(ClientesRequestDom) 
+2023-11-13 09:45:30,184 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: ClientesRequestDom{nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='null', email='cliente@gmail.com'} 
+2023-11-13 09:45:30,185 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <201 CREATED Created,ClientesResponseDom{id=15, nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='null', email='cliente@gmail.com', enderecos=null},[]> 
+2023-11-13 09:45:56,291 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.atualizarCliente(Long,ClientesRequestDom) 
+2023-11-13 09:45:56,291 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: 2 
+2023-11-13 09:45:56,292 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui nome!]},[]> 
+2023-11-13 09:46:06,509 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.atualizarCliente(Long,ClientesRequestDom) 
+2023-11-13 09:46:06,509 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Request: 2 
+2023-11-13 09:46:06,510 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui nome!]},[]> 
+2023-11-13 09:46:13,934 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.atualizarCliente(Long,ClientesRequestDom) 
+2023-11-13 09:46:13,935 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: 2 
+2023-11-13 09:46:13,936 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <400 BAD_REQUEST Bad Request,{messages=[Cliente informado não possui email!]},[]> 
+2023-11-13 09:46:19,549 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.atualizarCliente(Long,ClientesRequestDom) 
+2023-11-13 09:46:19,550 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: 2 
+2023-11-13 09:46:19,551 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <200 OK OK,ClientesResponseDom{id=2, nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com', enderecos=null},[]> 
+2023-11-13 09:46:36,853 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.atualizarCliente(Long,ClientesRequestDom) 
+2023-11-13 09:46:36,853 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: 15 
+2023-11-13 09:46:36,854 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <200 OK OK,ClientesResponseDom{id=15, nome='Nome do Cliente', sobrenome='Sobrenome do Cliente', dataNascimento=1995-05-15, telefone='48990004563', email='cliente@gmail.com', enderecos=null},[]> 
+2023-11-13 09:46:44,424 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.deletarCliente(Long) 
+2023-11-13 09:46:44,425 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 15 
+2023-11-13 09:46:44,428 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,[]> 
+2023-11-13 09:46:49,777 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.ClientesController.deletarCliente(Long) 
+2023-11-13 09:46:49,777 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: 3 
+2023-11-13 09:46:49,778 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <200 OK OK,[]> 
+2023-11-13 09:48:36,511 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.carregarEnderecos() 
+2023-11-13 09:48:36,512 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Request: null 
+2023-11-13 09:48:36,512 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Response: <200 OK OK,[EnderecosResponseDom{id=1, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=1}, EnderecosResponseDom{id=2, rua='Nome 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=1}, EnderecosResponseDom{id=4, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=5, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=6, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=7, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=8, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=9, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=10, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=11, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=12, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=13, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=4}, EnderecosResponseDom{id=14, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=10}],[]> 
+2023-11-13 09:48:51,473 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.carregarEnderecoById(Long) 
+2023-11-13 09:48:51,473 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: 2 
+2023-11-13 09:48:51,474 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <200 OK OK,EnderecosResponseDom{id=2, rua='Nome 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=1},[]> 
+2023-11-13 09:48:58,593 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.cadastro.frameWork.utils.SenacException: Endereços não encontrado] with root cause 
+com.cadastro.frameWork.utils.SenacException: Endereços não encontrado
+	at com.cadastro.useCases.enderecos.impl.EnderecosBusinessImpl.carregarEnderecoById(EnderecosBusinessImpl.java:99)
+	at com.cadastro.useCases.enderecos.impl.EnderecosServiceImpl.carregarEnderecoById(EnderecosServiceImpl.java:39)
+	at com.cadastro.controllers.EnderecosController.carregarEnderecoById(EnderecosController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.cadastro.frameWork.annotions.LogRestAspect.logRequisicao(LogRestAspect.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.cadastro.controllers.EnderecosController$$SpringCGLIB$$0.carregarEnderecoById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-13 09:49:05,528 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.cadastro.frameWork.utils.SenacException: Endereços não encontrado] with root cause 
+com.cadastro.frameWork.utils.SenacException: Endereços não encontrado
+	at com.cadastro.useCases.enderecos.impl.EnderecosBusinessImpl.carregarEnderecoById(EnderecosBusinessImpl.java:99)
+	at com.cadastro.useCases.enderecos.impl.EnderecosServiceImpl.carregarEnderecoById(EnderecosServiceImpl.java:39)
+	at com.cadastro.controllers.EnderecosController.carregarEnderecoById(EnderecosController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.cadastro.frameWork.annotions.LogRestAspect.logRequisicao(LogRestAspect.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.cadastro.controllers.EnderecosController$$SpringCGLIB$$0.carregarEnderecoById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-13 09:49:16,593 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.carregarEnderecoById(Long) 
+2023-11-13 09:49:16,594 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 14 
+2023-11-13 09:49:16,594 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,EnderecosResponseDom{id=14, rua='Rua 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=10},[]> 
+2023-11-13 09:49:49,661 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.criarEndereco(EnderecosRequestDom) 
+2023-11-13 09:49:49,662 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom@30f9cd9c 
+2023-11-13 09:49:49,663 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <400 BAD_REQUEST Bad Request,{messages=[Rua não informa!]},[]> 
+2023-11-13 09:49:56,916 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.criarEndereco(EnderecosRequestDom) 
+2023-11-13 09:49:56,916 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom@4311fe91 
+2023-11-13 09:49:56,917 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <400 BAD_REQUEST Bad Request,{messages=[Bairro não informa!]},[]> 
+2023-11-13 09:50:39,070 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.criarEndereco(EnderecosRequestDom) 
+2023-11-13 09:50:39,071 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: com.cadastro.useCases.enderecos.domanis.EnderecosRequestDom@43679d97 
+2023-11-13 09:50:39,071 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <201 CREATED Created,EnderecosResponseDom{id=15, rua='Rua do Endereço', bairro='Bairro do Endereço', cidade='Cidade do Endereço', estado='Estado do Endereço', clienteId=14},[]> 
+2023-11-13 09:50:57,598 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.atualizarEndereco(Long,EnderecosRequestDom) 
+2023-11-13 09:50:57,599 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: 15 
+2023-11-13 09:50:57,599 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <200 OK OK,EnderecosResponseDom{id=15, rua='Nome 8', bairro='Bairro 8', cidade='Cidade 8', estado='Estado 8', clienteId=1},[]> 
+2023-11-13 09:51:16,545 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.atualizarEndereco(Long,EnderecosRequestDom) 
+2023-11-13 09:51:16,545 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: 15 
+2023-11-13 09:51:16,546 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <400 BAD_REQUEST Bad Request,{messages=[Cidade não informa!]},[]> 
+2023-11-13 09:51:27,173 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.atualizarEndereco(Long,EnderecosRequestDom) 
+2023-11-13 09:51:27,174 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: 15 
+2023-11-13 09:51:27,174 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <400 BAD_REQUEST Bad Request,{messages=[Estado não informa!]},[]> 
+2023-11-13 09:51:34,915 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.atualizarEndereco(Long,EnderecosRequestDom) 
+2023-11-13 09:51:34,915 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: 15 
+2023-11-13 09:51:34,916 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <200 OK OK,EnderecosResponseDom{id=15, rua='Rua do Endereço', bairro='Bairro do Endereço', cidade='Cidade do Endereço', estado='Estado do Endereço', clienteId=14},[]> 
+2023-11-13 09:51:44,818 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.EnderecosController.deletarEndereco(Long) 
+2023-11-13 09:51:44,819 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: 15 
+2023-11-13 09:51:44,819 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <200 OK OK,[]> 
+2023-11-13 09:52:44,554 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.carregarProdutos() 
+2023-11-13 09:52:44,554 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: null 
+2023-11-13 09:52:44,555 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <200 OK OK,[com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@9e9fc9c, com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@224d7c8f, com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@5aac0c04, com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@44eec907, com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@225d01a, com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@4b456dd5],[]> 
+2023-11-13 09:53:13,856 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.cadastro.frameWork.utils.SenacException: Produto não encontrado] with root cause 
+com.cadastro.frameWork.utils.SenacException: Produto não encontrado
+	at com.cadastro.useCases.produtos.impl.ProdutosBusinessImpl.carregarProdutoById(ProdutosBusinessImpl.java:91)
+	at com.cadastro.useCases.produtos.impl.ProdutosServiceImpl.carregarProdutoById(ProdutosServiceImpl.java:36)
+	at com.cadastro.controllers.ProdutosController.carregarProdutoById(ProdutosController.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.cadastro.frameWork.annotions.LogRestAspect.logRequisicao(LogRestAspect.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.cadastro.controllers.ProdutosController$$SpringCGLIB$$0.carregarProdutoById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-13 09:53:19,327 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.carregarProdutoById(Long) 
+2023-11-13 09:53:19,327 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: 7 
+2023-11-13 09:53:19,327 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <200 OK OK,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@4ba482ec,[]> 
+2023-11-13 09:53:33,454 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:53:33,455 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@70520f70 
+2023-11-13 09:53:33,456 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui nome!]},[]> 
+2023-11-13 09:53:43,641 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:53:43,642 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@48b861e3 
+2023-11-13 09:53:43,642 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui descrição!]},[]> 
+2023-11-13 09:53:58,979 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:53:58,979 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@57dc2a47 
+2023-11-13 09:53:58,980 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui nome!]},[]> 
+2023-11-13 09:54:07,934 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:54:07,934 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@43a7cd45 
+2023-11-13 09:54:07,935 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui descrição!]},[]> 
+2023-11-13 09:54:23,124 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:54:23,125 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@3840b8c1 
+2023-11-13 09:54:23,125 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <201 CREATED Created,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@7fd618dd,[]> 
+2023-11-13 09:54:36,770 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:54:36,771 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@2e635839 
+2023-11-13 09:54:36,771 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <201 CREATED Created,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@4c6e5f75,[]> 
+2023-11-13 09:54:47,514 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:54:47,515 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@4cc2d530 
+2023-11-13 09:54:47,515 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <201 CREATED Created,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@2c5e97af,[]> 
+2023-11-13 09:55:06,537 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.criarProduto(ProdutosRequestDom) 
+2023-11-13 09:55:06,537 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: com.cadastro.useCases.produtos.domanis.ProdutosRequestDom@4d88fa4b 
+2023-11-13 09:55:06,538 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <201 CREATED Created,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@447b5d20,[]> 
+2023-11-13 09:55:23,701 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.atualizarProduto(Long,ProdutosRequestDom) 
+2023-11-13 09:55:23,701 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: 2 
+2023-11-13 09:55:23,702 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui nome!]},[]> 
+2023-11-13 09:55:36,140 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.atualizarProduto(Long,ProdutosRequestDom) 
+2023-11-13 09:55:36,141 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 2 
+2023-11-13 09:55:36,141 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui descrição!]},[]> 
+2023-11-13 09:56:00,947 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.atualizarProduto(Long,ProdutosRequestDom) 
+2023-11-13 09:56:00,948 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: 2 
+2023-11-13 09:56:00,948 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto informado não possui descrição!]},[]> 
+2023-11-13 09:56:06,037 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.atualizarProduto(Long,ProdutosRequestDom) 
+2023-11-13 09:56:06,037 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: 2 
+2023-11-13 09:56:06,038 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <200 OK OK,com.cadastro.useCases.produtos.domanis.ProdutosResponseDom@49e9ddff,[]> 
+2023-11-13 09:56:19,852 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.ProdutosController.deletarProduto(Long) 
+2023-11-13 09:56:19,852 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: 11 
+2023-11-13 09:56:19,853 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <200 OK OK,[]> 
+2023-11-13 09:57:19,265 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.carregarPedidosItens() 
+2023-11-13 09:57:19,265 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: null 
+2023-11-13 09:57:19,266 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <200 OK OK,[com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@77c381ea, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@3fe2c89e, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@41e68dad, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@51784967, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@3adf4e73, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@1350c78e, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@66aebbac, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@758ee56f, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@3562817b, com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@201b4cee],[]> 
+2023-11-13 09:57:32,440 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.carregarPedidoItensById(Long) 
+2023-11-13 09:57:32,441 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: 3 
+2023-11-13 09:57:32,441 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <200 OK OK,com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@3231d8ea,[]> 
+2023-11-13 09:58:46,487 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.atualizarPedidoItens(Long,PedidosItensRequestDom) 
+2023-11-13 09:58:46,487 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 3 
+2023-11-13 09:58:46,488 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <400 BAD_REQUEST Bad Request,{messages=[Código do produto não informado ou inválido!]},[]> 
+2023-11-13 09:59:41,186 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.atualizarPedidoItens(Long,PedidosItensRequestDom) 
+2023-11-13 09:59:41,187 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Request: 3 
+2023-11-13 09:59:41,187 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-5] Response: <400 BAD_REQUEST Bad Request,{messages=[Produto não encontrado]},[]> 
+2023-11-13 09:59:56,281 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.atualizarPedidoItens(Long,PedidosItensRequestDom) 
+2023-11-13 09:59:56,281 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: 3 
+2023-11-13 09:59:56,282 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <200 OK OK,com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@1213af37,[]> 
+2023-11-13 10:00:09,621 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.criarPedidoItens(PedidosItensRequestDom) 
+2023-11-13 10:00:09,622 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom@7452aa4f 
+2023-11-13 10:00:09,622 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <400 BAD_REQUEST Bad Request,{messages=[Quantidade não informada ou inválida!]},[]> 
+2023-11-13 10:00:17,298 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value] 
+2023-11-13 10:00:23,974 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value] 
+2023-11-13 10:00:38,813 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.criarPedidoItens(PedidosItensRequestDom) 
+2023-11-13 10:00:38,813 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom@fe593ce 
+2023-11-13 10:00:38,814 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <400 BAD_REQUEST Bad Request,{messages=[Valor unitário não informado ou inválido!]},[]> 
+2023-11-13 10:01:26,478 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.criarPedidoItens(PedidosItensRequestDom) 
+2023-11-13 10:01:26,479 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Request: com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom@5d19b72b 
+2023-11-13 10:01:26,479 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Response: <400 BAD_REQUEST Bad Request,{messages=[Pedido não encontrado]},[]> 
+2023-11-13 10:01:44,671 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.criarPedidoItens(PedidosItensRequestDom) 
+2023-11-13 10:01:44,672 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom@19d7fac7 
+2023-11-13 10:01:44,673 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <201 CREATED Created,com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@1a7555d8,[]> 
+2023-11-13 10:02:26,278 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.criarPedidoItens(PedidosItensRequestDom) 
+2023-11-13 10:02:26,279 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: com.cadastro.useCases.pedidosItens.domanis.PedidosItensRequestDom@7114ff7f 
+2023-11-13 10:02:26,280 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <201 CREATED Created,com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@42fd3597,[]> 
+2023-11-13 10:02:46,592 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.atualizarPedidoItens(Long,PedidosItensRequestDom) 
+2023-11-13 10:02:46,592 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: 13 
+2023-11-13 10:02:46,592 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <200 OK OK,com.cadastro.useCases.pedidosItens.domanis.PedidosItensResponseDom@4ccecead,[]> 
+2023-11-13 10:02:58,804 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.PedidosItensController.deletarPedidoItens(Long) 
+2023-11-13 10:02:58,805 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: 13 
+2023-11-13 10:02:58,809 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <200 OK OK,[]> 
+2023-11-13 10:03:46,234 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.carregarPedidos() 
+2023-11-13 10:03:46,234 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: null 
+2023-11-13 10:03:46,237 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <200 OK OK,[PedidosResponseDom{id=1, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=8, enderecoId=9, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=2, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=1, enderecoId=4, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=3, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=8, enderecoId=10, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=5, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=9, enderecoId=11, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=6, dataCriacao=2023-10-20T00:00, dataEntrega=2023-11-20, valorDesconto=0.0, clienteId=10, enderecoId=12, pedidosItens=null, valorTotal=null}, PedidosResponseDom{id=9, dataCriacao=2023-10-20T00:00, dataEntrega=2023-10-20, valorDesconto=0.0, clienteId=12, enderecoId=14, pedidosItens=null, valorTotal=null}],[]> 
+2023-11-13 10:04:00,403 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.carregarPedidoById(Long) 
+2023-11-13 10:04:00,403 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 5 
+2023-11-13 10:04:00,403 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,PedidosResponseDom{id=5, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=9, enderecoId=11, pedidosItens=[com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse@5ddcaec, com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse@58949b88], valorTotal=387.03000000000003},[]> 
+2023-11-13 10:05:47,552 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:05:47,552 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@702c9002 
+2023-11-13 10:05:47,552 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Response: <400 BAD_REQUEST Bad Request,{messages=[Data de entrega não informada!]},[]> 
+2023-11-13 10:05:56,731 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:05:56,732 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@46c73df4 
+2023-11-13 10:05:56,732 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-7] Response: <400 BAD_REQUEST Bad Request,{messages=[Data de entrega não informada!]},[]> 
+2023-11-13 10:06:01,887 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-9] SQL Error: 0, SQLState: 23505 
+2023-11-13 10:06:01,888 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-9] ERROR: duplicate key value violates unique constraint "uk_9h7cfgvo5ilss5qg0sapewfs5"
+  Detalhe: Key (endereco_id)=(14) already exists. 
+2023-11-13 10:06:01,905 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:06:01,905 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@479eab29 
+2023-11-13 10:06:01,907 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-9] Response: <500 INTERNAL_SERVER_ERROR Internal Server Error,{messages=Erro não mapeado: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_9h7cfgvo5ilss5qg0sapewfs5"
+  Detalhe: Key (endereco_id)=(14) already exists.] [insert into pedidos (cliente_id,data_criacao,data_entrega,deleted_at,endereco_id,valor_desconto) values (?,?,?,?,?,?)]; SQL [insert into pedidos (cliente_id,data_criacao,data_entrega,deleted_at,endereco_id,valor_desconto) values (?,?,?,?,?,?)]; constraint [uk_9h7cfgvo5ilss5qg0sapewfs5]},[]> 
+2023-11-13 10:06:47,942 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:06:47,943 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@5da1536d 
+2023-11-13 10:06:47,943 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <400 BAD_REQUEST Bad Request,{messages=[Código do cliente não informado ou inválido!]},[]> 
+2023-11-13 10:06:57,462 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:06:57,462 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@1faf8d78 
+2023-11-13 10:06:57,463 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-4] Response: <400 BAD_REQUEST Bad Request,{messages=[Código do endereço não informado ou inválido!]},[]> 
+2023-11-13 10:07:06,561 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.criarPedido(PedidosRequestDom) 
+2023-11-13 10:07:06,562 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Request: com.cadastro.useCases.pedidos.domanis.PedidosRequestDom@6cebb3bb 
+2023-11-13 10:07:06,562 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-6] Response: <201 CREATED Created,PedidosResponseDom{id=11, dataCriacao=2023-11-13T10:07:06.546153600, dataEntrega=2024-01-20, valorDesconto=0.0, clienteId=14, enderecoId=1, pedidosItens=null, valorTotal=null},[]> 
+2023-11-13 10:07:52,833 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.atualizarPedido(Long,PedidosRequestDom) 
+2023-11-13 10:07:52,834 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Request: 11 
+2023-11-13 10:07:52,834 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-8] Response: <400 BAD_REQUEST Bad Request,{messages=[Data de entrega não informada!]},[]> 
+2023-11-13 10:08:04,737 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.atualizarPedido(Long,PedidosRequestDom) 
+2023-11-13 10:08:04,737 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Request: 11 
+2023-11-13 10:08:04,738 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-1] Response: <400 BAD_REQUEST Bad Request,{messages=[Código do cliente não informado ou inválido!]},[]> 
+2023-11-13 10:08:11,957 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.atualizarPedido(Long,PedidosRequestDom) 
+2023-11-13 10:08:11,958 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Request: 11 
+2023-11-13 10:08:11,958 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-10] Response: <200 OK OK,PedidosResponseDom{id=11, dataCriacao=null, dataEntrega=2024-01-15, valorDesconto=0.0, clienteId=14, enderecoId=1, pedidosItens=null, valorTotal=null},[]> 
+2023-11-13 10:08:45,073 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.deletarPedido(Long) 
+2023-11-13 10:08:45,073 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Request: 11 
+2023-11-13 10:08:45,074 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-3] Response: <200 OK OK,[]> 
+2023-11-13 10:09:16,994 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Metodo: ResponseEntity com.cadastro.controllers.PedidosController.carregarPedidoById(Long) 
+2023-11-13 10:09:16,994 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Request: 5 
+2023-11-13 10:09:16,995 WARN com.cadastro.frameWork.annotions.LogRestAspect [http-nio-8080-exec-2] Response: <200 OK OK,PedidosResponseDom{id=5, dataCriacao=2023-11-20T00:00, dataEntrega=2023-12-20, valorDesconto=0.0, clienteId=9, enderecoId=11, pedidosItens=[com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse@15b23540, com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse@2fec4e94], valorTotal=387.03000000000003},[]> 

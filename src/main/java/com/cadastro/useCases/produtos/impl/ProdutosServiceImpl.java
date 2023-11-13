@@ -32,7 +32,7 @@ public class ProdutosServiceImpl implements ProdutosService {
     }
 
     @Override
-    public ProdutosResponseDom carregarProdutoById(Long id) {
+    public ProdutosResponseDom carregarProdutoById(Long id) throws SenacException {
         return produtosBusiness.carregarProdutoById(id);
     }
 }

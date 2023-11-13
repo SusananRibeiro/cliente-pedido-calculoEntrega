@@ -17,6 +17,7 @@ public class PedidosMapper {
         out.setValorDesconto(pedidos.getValorDesconto());
         out.setClienteId(cliente);
         out.setEnderecoId(enderecos);
+        // chamar o método de calculo da data de entrega aqui
 
         return out;
     }
@@ -57,5 +58,6 @@ public class PedidosMapper {
         return out;
     }
 
+    // Criar o método de calculo da data de entrega aqui
 
 }

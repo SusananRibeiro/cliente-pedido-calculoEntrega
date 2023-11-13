@@ -11,5 +11,5 @@ public interface ProdutosBusiness {
     ProdutosResponseDom atualizarProduto(Long id, ProdutosRequestDom produtosRequestDom) throws SenacException;
     void deletarProdutos(Long id);
     Produtos carregarProdutoEntidade(Long id);
-    ProdutosResponseDom carregarProdutoById(Long id);
+    ProdutosResponseDom carregarProdutoById(Long id) throws SenacException;
 }

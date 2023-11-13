@@ -33,7 +33,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/produtos/carregar/3",
+					"raw": "http://localhost:8080/produtos/carregar/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -42,7 +42,7 @@
 					"path": [
 						"produtos",
 						"carregar",
-						"3"
+						"7"
 					]
 				}
 			},
@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"\",\r\n    \"descricao\": \"\"\r\n}",
+					"raw": "{\r\n    \"nome\": \"Caneta GEL Amarela\",\r\n    \"descricao\": \"Caneta de gel na cor Verde\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"iPhone\",\r\n    \"descricao\": \"Alguma coisa alguma coisa boa\"\r\n}",
+					"raw": "{\r\n    \"nome\": \"Caneta GEL Amarela\",\r\n    \"descricao\": \"Caneta de gel na cor Amarela\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -113,7 +113,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/produtos/deletar/3",
+					"raw": "http://localhost:8080/produtos/deletar/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,7 +122,7 @@
 					"path": [
 						"produtos",
 						"deletar",
-						"3"
+						"11"
 					]
 				}
 			},

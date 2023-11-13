@@ -31,7 +31,7 @@ public class ClientesController {
 
     @GetMapping("/carregar/{id}")
     @LogRest
-    public ResponseEntity<ClientesResponseDom> carregarClienteById(@PathVariable Long id){
+    public ResponseEntity<ClientesResponseDom> carregarClienteById(@PathVariable Long id) throws SenacException {
         return ResponseEntity.ok(clientesService.carregarClienteById(id));
     }
 
