@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"dataEntrega\": \"2024-01-20\",\r\n    \"clienteId\": 14,\r\n    \"enderecoId\": 1\r\n}",
+					"raw": "{\r\n    \"valorDesconto\": 10.0,\r\n    \"clienteId\": 5,\r\n    \"enderecoId\": 5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -87,8 +87,6 @@ public class PedidosBusinessImpl implements PedidosBusiness {
         }
 
         Optional<Pedidos> pedidosRetorno = pedidosRepository.findById(id).map(record -> {
-            record.setDataCriacao(pedido.getDataCriacao());
-            record.setDataEntrega(pedido.getDataEntrega());
             record.setValorDesconto(pedido.getValorDesconto());
             record.setClienteId(cliente.get());
             record.setEnderecoId(endereco.get());
@@ -145,9 +143,9 @@ public class PedidosBusinessImpl implements PedidosBusiness {
     private List<String> validacaoManutencaoPedido(PedidosRequestDom pedido){
         List<String> messages = new ArrayList<>();
 
-        if(pedido.getDataEntrega() == null){
-            messages.add("Data de entrega não informada!");
-        }
+//        if(pedido.getDataEntrega() == null){
+//            messages.add("Data de entrega não informada!");
+//        }
 
         if(pedido.getClienteId() == null || pedido.getClienteId() < 1){
             messages.add("Código do cliente não informado ou inválido!");

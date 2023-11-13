@@ -3,8 +3,9 @@ import com.cadastro.entities.*;
 import com.cadastro.useCases.pedidos.domanis.PedidosPedidosItensResponse;
 import com.cadastro.useCases.pedidos.domanis.PedidosRequestDom;
 import com.cadastro.useCases.pedidos.domanis.PedidosResponseDom;
-
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,11 +14,11 @@ public class PedidosMapper {
     public static Pedidos pedidosResquestDomToPedidos(PedidosRequestDom pedidos, Clientes cliente, Enderecos enderecos){
         Pedidos out = new Pedidos();
         out.setDataCriacao(LocalDateTime.now());
-        out.setDataEntrega(pedidos.getDataEntrega());
+        out.setDataEntrega(calcularDataDeEntrega(LocalDateTime.now())); // chamar o método de calculo da data de entrega aqui
         out.setValorDesconto(pedidos.getValorDesconto());
         out.setClienteId(cliente);
         out.setEnderecoId(enderecos);
-        // chamar o método de calculo da data de entrega aqui
+
 
         return out;
     }
@@ -36,7 +37,7 @@ public class PedidosMapper {
     }
 
     public static PedidosResponseDom pedidosToPedidosProdutosResponseDom(Pedidos pedido,
-                                                                                        List<PedidosItens> pedidosItens){
+                                                                         List<PedidosItens> pedidosItens){
         PedidosResponseDom out = PedidosMapper.pedidosToPedidosResponseDom(pedido);
         List<PedidosPedidosItensResponse> pedidosPedidosItensResponseList = pedidosItens.stream()
                 .map(PedidosMapper::pedidosItensToPedidosProdutosResponseDom)
@@ -59,5 +60,12 @@ public class PedidosMapper {
     }
 
     // Criar o método de calculo da data de entrega aqui
+    public static LocalDate calcularDataDeEntrega(LocalDateTime dataCriacao) {
+        // Adiciona 15 dias à data de criação
+        LocalDateTime dataEntrega = dataCriacao.plus(15, ChronoUnit.DAYS);
+
+        // Extrai a parte da data (ignorando a parte do tempo)
+        return dataEntrega.toLocalDate();
+    }
 
 }
