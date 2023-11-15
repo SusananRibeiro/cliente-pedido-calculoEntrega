@@ -13,7 +13,7 @@ public class ClientesMapper {
         out.setId(clientes.getId());
         out.setNome(clientes.getNome());
         out.setEmail(clientes.getEmail());
-        out.setSobrenome(clientes.getSobreNome());
+        out.setSobrenome(clientes.getSobrenome());
         out.setTelefone(clientes.getTelefone());
         out.setDataNascimento(clientes.getDataNascimento());
 
@@ -26,7 +26,7 @@ public class ClientesMapper {
         out.setEmail(clientesRequestDom.getEmail());
         out.setNome(clientesRequestDom.getNome());
         out.setTelefone(clientesRequestDom.getTelefone());
-        out.setSobreNome(clientesRequestDom.getSobrenome());
+        out.setSobrenome(clientesRequestDom.getSobrenome());
 
         return out;
     }

@@ -11,13 +11,13 @@ public class Enderecos {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(nullable = false)
     private String rua;
-    @Column
+    @Column(nullable = false)
     private String bairro;
-    @Column
+    @Column(nullable = false)
     private String cidade;
-    @Column
+    @Column(nullable = false)
     private String estado;
     @Column
     private LocalDateTime deleted_at;
