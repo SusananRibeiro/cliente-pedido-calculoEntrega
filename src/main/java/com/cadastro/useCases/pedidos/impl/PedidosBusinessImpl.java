@@ -128,7 +128,6 @@ public class PedidosBusinessImpl implements PedidosBusiness {
         }
 
         out.setValorTotal(valorTotal - out.getValorDesconto());
-
         return out;
 
     }
@@ -136,16 +135,11 @@ public class PedidosBusinessImpl implements PedidosBusiness {
     @Override
     public Pedidos carregarPedidoEntidade(Long id) {
         Pedidos pedidos = pedidosRepository.findById(id).get();
-
         return pedidos;
     }
 
     private List<String> validacaoManutencaoPedido(PedidosRequestDom pedido){
         List<String> messages = new ArrayList<>();
-
-//        if(pedido.getDataEntrega() == null){
-//            messages.add("Data de entrega não informada!");
-//        }
 
         if(pedido.getClienteId() == null || pedido.getClienteId() < 1){
             messages.add("Código do cliente não informado ou inválido!");

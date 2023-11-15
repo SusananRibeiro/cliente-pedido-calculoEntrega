@@ -1,7 +1,6 @@
 package com.cadastro.useCases.clientes.impl;
 import com.cadastro.entities.Clientes;
 import com.cadastro.entities.Enderecos;
-import com.cadastro.entities.Pedidos;
 import com.cadastro.frameWork.annotions.Business;
 import com.cadastro.frameWork.utils.SenacException;
 import com.cadastro.frameWork.utils.StringUtil;
@@ -64,7 +63,7 @@ public class ClientesBusinessImpl implements ClientesBusiness {
         }
 
         Optional<Clientes> clientes = clientesRepository.findById(id).map(record -> {
-           record.setSobreNome(clientesRequestDom.getSobrenome());
+           record.setSobrenome(clientesRequestDom.getSobrenome());
            record.setNome(clientesRequestDom.getNome());
            record.setEmail(clientesRequestDom.getEmail());
            record.setTelefone(clientesRequestDom.getTelefone());

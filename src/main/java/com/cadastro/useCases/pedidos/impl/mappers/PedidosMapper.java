@@ -14,12 +14,10 @@ public class PedidosMapper {
     public static Pedidos pedidosResquestDomToPedidos(PedidosRequestDom pedidos, Clientes cliente, Enderecos enderecos){
         Pedidos out = new Pedidos();
         out.setDataCriacao(LocalDateTime.now());
-        out.setDataEntrega(calcularDataDeEntrega(LocalDateTime.now())); // chamar o método de calculo da data de entrega aqui
+        out.setDataEntrega(calcularDataDeEntrega(LocalDateTime.now()));
         out.setValorDesconto(pedidos.getValorDesconto());
         out.setClienteId(cliente);
         out.setEnderecoId(enderecos);
-
-
         return out;
     }
 
@@ -32,7 +30,6 @@ public class PedidosMapper {
         out.setClienteId(pedidos.getClienteId().getId());
         out.setEnderecoId(pedidos.getEnderecoId().getId());
         out.getValorTotal();
-
         return out;
     }
 
@@ -42,9 +39,7 @@ public class PedidosMapper {
         List<PedidosPedidosItensResponse> pedidosPedidosItensResponseList = pedidosItens.stream()
                 .map(PedidosMapper::pedidosItensToPedidosProdutosResponseDom)
                 .collect(Collectors.toList());
-
         out.setPedidosItens(pedidosPedidosItensResponseList);
-
         return out;
     }
 
@@ -58,12 +53,9 @@ public class PedidosMapper {
         out.setNomeDoProduto(pedidosItens.getProdutoId().getNome());
         return out;
     }
-
-    // Criar o método de calculo da data de entrega aqui
     public static LocalDate calcularDataDeEntrega(LocalDateTime dataCriacao) {
         // Adiciona 15 dias à data de criação
         LocalDateTime dataEntrega = dataCriacao.plus(15, ChronoUnit.DAYS);
-
         // Extrai a parte da data (ignorando a parte do tempo)
         return dataEntrega.toLocalDate();
     }
